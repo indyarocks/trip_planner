@@ -13,7 +13,7 @@ class CreateTrainSchedules < ActiveRecord::Migration
       t.boolean :thu, default: false
       t.boolean :fri, default: false
       t.boolean :sat, default: false
-      t.column :journey_day, 'tinyint(3)', null: false
+      t.integer :journey_day, limit:4, null: false
 
       t.timestamps
     end

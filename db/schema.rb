@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140524120958) do
     t.boolean  "thu",                             default: false
     t.boolean  "fri",                             default: false
     t.boolean  "sat",                             default: false
-    t.integer  "journey_day",          limit: 3,                  null: false
+    t.integer  "journey_day",          limit: 4,                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
