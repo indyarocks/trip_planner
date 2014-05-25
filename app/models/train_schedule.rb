@@ -208,7 +208,7 @@ class TrainSchedule < ActiveRecord::Base
     destination_train_number_stops_map_sorted = Hash[destination_train_number_stops_map.map{|key, val| [key, val.sort_by{|ts| ts.distance_from_origin}]}]
 
     possible_origin_trains.each do |origin_tr_no, origin_ts|
-      ordered_origin_train_stops = origin_train_number_stops_map_sorted[origin_tr_no].collect{|ts| ts.station_code}
+      ordered_origin_train_stops = origin_train_number_stops_map_sorted[origin_tr_no].collect{|ts| ts.station_code} - [origin_ts.station_code] # Remove the origin train from possible next stops list
       destination_train_number_stops_map_sorted.each do |dest_tr_no, dest_tr_stops|
         trip_found = false
         dest_tr_stops.each do |dest_ts|
