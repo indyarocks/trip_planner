@@ -214,7 +214,7 @@ class TrainSchedule < ActiveRecord::Base
         dest_tr_stops.each do |dest_ts|
           next if trip_found == true
           if (index = ordered_origin_train_stops.index(dest_ts.station_code)).present?
-            first_part = {origin: origin_ts, destination: origin_train_number_stops_map_sorted[origin_tr_no][index]}
+            first_part = {origin: origin_ts, destination: origin_train_number_stops_map_sorted[origin_tr_no][index+1]}
             second_part = {origin: dest_ts, destination: destination_train_number_stops_map_sorted[dest_tr_no].last}
             possible_multi_part_train_schedules << [first_part, second_part]
             trip_found = true
