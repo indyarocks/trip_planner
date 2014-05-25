@@ -1,27 +1,29 @@
-<h1>Listing stations</h1>
+<div id="mainContainer">
+  <h1>Listing stations</h1>
 
-<table>
-  <thead>
+  <table>
+    <thead>
     <tr>
       <th>Name</th>
       <th>Code</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @stations.each do |station| %>
-      <tr>
-        <td><%= station.name %></td>
-        <td><%= station.code %></td>
-        <td><%= link_to 'Show', station %></td>
-        <td><%= link_to 'Edit', edit_station_path(station) %></td>
-        <td><%= link_to 'Destroy', station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= station.name %></td>
+          <td><%= station.code %></td>
+          <td><%= link_to 'Show', station %></td>
+          <td><%= link_to 'Edit', edit_station_path(station) %></td>
+          <td><%= link_to 'Destroy', station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Station', new_station_path %>
+  <%= link_to 'New Station', new_station_path %>
+</div>

@@ -1,4 +1,5 @@
 class TrainSchedulesController < ApplicationController
+  http_basic_authenticate_with name: "chandan", password: "secrettrip"
   before_action :set_train_schedule, only: [:show, :edit, :update, :destroy]
 
   # GET /train_schedules

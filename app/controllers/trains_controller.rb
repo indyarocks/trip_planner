@@ -1,4 +1,5 @@
 class TrainsController < ApplicationController
+  http_basic_authenticate_with name: "chandan", password: "secrettrip"
   before_action :set_train, only: [:show, :edit, :update, :destroy]
 
   # GET /trains

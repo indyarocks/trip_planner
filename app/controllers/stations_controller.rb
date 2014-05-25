@@ -1,4 +1,5 @@
 class StationsController < ApplicationController
+  http_basic_authenticate_with name: "chandan", password: "secrettrip"
   before_action :set_station, only: [:show, :edit, :update, :destroy]
 
   # GET /stations

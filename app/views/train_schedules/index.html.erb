@@ -1,7 +1,8 @@
-<h1>Listing train_schedules</h1>
+<div id="mainContainer" style="margin:0px 180px;">
+  <h1>Listing train_schedules</h1>
 
-<table>
-  <thead>
+  <table>
+    <thead>
     <tr>
       <th>Train number</th>
       <th>Station code</th>
@@ -18,32 +19,33 @@
       <th>Journey day</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @train_schedules.each do |train_schedule| %>
-      <tr>
-        <td><%= train_schedule.train_number %></td>
-        <td><%= train_schedule.station_code %></td>
-        <td><%= train_schedule.distance_from_origin %></td>
-        <td><%= train_schedule.arrival_time %></td>
-        <td><%= train_schedule.departure_time %></td>
-        <td><%= train_schedule.sun %></td>
-        <td><%= train_schedule.mon %></td>
-        <td><%= train_schedule.tue %></td>
-        <td><%= train_schedule.wed %></td>
-        <td><%= train_schedule.thu %></td>
-        <td><%= train_schedule.fri %></td>
-        <td><%= train_schedule.sat %></td>
-        <td><%= train_schedule.journey_day %></td>
-        <td><%= link_to 'Show', train_schedule %></td>
-        <td><%= link_to 'Edit', edit_train_schedule_path(train_schedule) %></td>
-        <td><%= link_to 'Destroy', train_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= train_schedule.train_number %></td>
+          <td><%= train_schedule.station_code %></td>
+          <td><%= train_schedule.distance_from_origin %></td>
+          <td><%= train_schedule.arrival_time %></td>
+          <td><%= train_schedule.departure_time %></td>
+          <td><%= train_schedule.sun %></td>
+          <td><%= train_schedule.mon %></td>
+          <td><%= train_schedule.tue %></td>
+          <td><%= train_schedule.wed %></td>
+          <td><%= train_schedule.thu %></td>
+          <td><%= train_schedule.fri %></td>
+          <td><%= train_schedule.sat %></td>
+          <td><%= train_schedule.journey_day %></td>
+          <td><%= link_to 'Show', train_schedule %></td>
+          <td><%= link_to 'Edit', edit_train_schedule_path(train_schedule) %></td>
+          <td><%= link_to 'Destroy', train_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Train schedule', new_train_schedule_path %>
+  <%= link_to 'New Train schedule', new_train_schedule_path %>
+</div>
