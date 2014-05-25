@@ -1,4 +1,4 @@
-<div id="mainContainer">
+<div id="mainContainer" style="width:475px;">
   <div class="tripType">
     <%= form_tag :search_trip, {method: :get} do %>
         One Way Trip <%= radio_button("home", "trip_type", "one_way", :onclick => 'tripTypeFunc("one_way")', class: 'tripTypeRadio') %>
