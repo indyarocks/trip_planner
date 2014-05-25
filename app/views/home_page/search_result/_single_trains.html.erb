@@ -1,0 +1,25 @@
+<div class="alert alert-info text-center" style="width: 90%; margin: auto;">
+  AVAILABLE SINGLE TRAIN(S)
+</div>
+<div class="table table-bordered table-hover" style="width: 93%; margin: auto;">
+  <table class="table">
+    <thead>
+    <tr>
+      <% table_headers.each do |t_head| %>
+          <th><%= t_head.to_s.humanize %></th>
+      <% end %>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <% single_trains.each_with_index do |train_detail, i| %>
+          <td><%= i+1 %></td>
+          <% train_detail.each_value do |value| %>
+              <td><%= value %></td>
+          <% end %>
+      <% end %>
+    </tr>
+    </tbody>
+  </table>
+</div>

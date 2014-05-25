@@ -1,0 +1,17 @@
+<%
+   single_trains = @result[:trip_details][:one_way][:single_trains]
+   multi_part = @result[:trip_details][:one_way][:multi_part]
+%>
+
+<div class="alert alert-success center" style="width: 90%; margin: auto;">
+  <p class="text-center">ONE WAY TRIP DETAILS</p>
+</div><br>
+
+<% if single_trains.present? %>
+    <%= render partial: 'home_page/search_result/single_trains', locals: {table_headers: table_headers, single_trains: single_trains} %>
+<% end %>
+<br>
+
+<% if multi_part.present? %>
+    <%= render partial: 'home_page/search_result/multi_part', locals: {table_headers: table_headers, multi_part: multi_part} %>
+<% end %>

@@ -1,0 +1,31 @@
+<%
+   onward_journey = @result[:trip_details][:onward_journey]
+   return_journey = @result[:trip_details][:return_journey]
+%>
+
+<div class="alert alert-success center" style="width: 90%; margin: auto;">
+  <p class="text-center">ONWARD TRIP DETAILS</p>
+</div>
+
+<% if onward_journey[:single_trains].present? %>
+    <%= render partial: 'home_page/search_result/single_trains', locals: {table_headers: table_headers, single_trains: onward_journey[:single_trains]} %>
+<% end %>
+<br>
+
+<% if onward_journey[:multi_part].present? %>
+    <%= render partial: 'home_page/search_result/multi_part', locals: {table_headers: table_headers, multi_part: onward_journey[:multi_part]} %>
+<% end %>
+
+<br><br><br>
+<div class="alert alert-success center" style="width: 90%; margin: auto;">
+  <p class="text-center">RETURN TRIP DETAILS</p>
+</div>
+
+<% if return_journey[:single_trains].present? %>
+    <%= render partial: 'home_page/search_result/single_trains', locals: {table_headers: table_headers, single_trains: return_journey[:single_trains]} %>
+<% end %>
+<br>
+
+<% if return_journey[:multi_part].present? %>
+    <%= render partial: 'home_page/search_result/multi_part', locals: {table_headers: table_headers, multi_part: return_journey[:multi_part]} %>
+<% end %>

@@ -1,0 +1,31 @@
+<%
+   first_part_journey = @result[:trip_details][:first_part]
+   second_part_journey = @result[:trip_details][:second_part]
+%>
+
+<div class="alert alert-success center" style="width: 90%; margin: auto;">
+  <p class="text-center">FIRST PART TRIP DETAILS</p>
+</div>
+
+<% if first_part_journey[:single_trains].present? %>
+    <%= render partial: 'home_page/search_result/single_trains', locals: {table_headers: table_headers, single_trains: first_part_journey[:single_trains]} %>
+<% end %>
+<br>
+
+<% if first_part_journey[:multi_part].present? %>
+    <%= render partial: 'home_page/search_result/multi_part', locals: {table_headers: table_headers, multi_part: first_part_journey[:multi_part]} %>
+<% end %>
+
+<br><br><br>
+<div class="alert alert-success center" style="width: 90%; margin: auto;">
+  <p class="text-center">SECOND PART TRIP DETAILS</p>
+</div>
+
+<% if second_part_journey[:single_trains].present? %>
+    <%= render partial: 'home_page/search_result/single_trains', locals: {table_headers: table_headers, single_trains: second_part_journey[:single_trains]} %>
+<% end %>
+<br>
+
+<% if second_part_journey[:multi_part].present? %>
+    <%= render partial: 'home_page/search_result/multi_part', locals: {table_headers: table_headers, multi_part: second_part_journey[:multi_part]} %>
+<% end %>

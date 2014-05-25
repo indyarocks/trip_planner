@@ -1,0 +1,52 @@
+@import "bootstrap";
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#mainContainer {
+  padding: 50px 100px;
+  margin: 0px 250px;
+  border: 1px dotted;
+  border-color: red;
+  border-radius: 30px;
+  border-width: 2px;
+}
+
+ .tripTypeRadio {
+   margin-right: 50px !important;
+ }
+
+ .stations {
+   width: 500px;
+   float: left;
+   .selectFrom {
+     width: 200px;
+   }
+   .selectTo {
+     width: 200px;
+   }
+ }
+
+ #searchButton {
+   float: right;
+   margin-top: 10px;
+ }
+
+ .departDate {
+   width: 230px;
+ }

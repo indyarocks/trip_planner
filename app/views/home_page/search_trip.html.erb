@@ -1,0 +1,16 @@
+<%
+  table_headers = [:sr_no, :train_name, :train_number, :origin, :depart_day, :depart_date, :depart_time, :destination, :arrival_day, :arrival_date, :arrival_time]
+%>
+<div class="text-center ">
+  <%= link_to 'Home', root_path, class: "btn btn-success" %>
+</div>
+
+<br><br>
+<% if @result[:err].present? %>
+    <div class="alert alert-error text-center" style="width: 90%; margin: auto;">
+      <%= @result[:message] %>
+    </div>
+<% else %>
+    <%= render partial: "home_page/search_result/search_#{@result[:trip_type]}", locals: {table_headers: table_headers} %>
+<% end %>
+

@@ -1,0 +1,72 @@
+<%= form_for(@train_schedule) do |f| %>
+  <% if @train_schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@train_schedule.errors.count, "error") %> prohibited this train_schedule from being saved:</h2>
+
+      <ul>
+      <% @train_schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :train_number %><br>
+    <%= f.number_field :train_number %>
+  </div>
+  <div class="field">
+    <%= f.label :station_code %><br>
+    <%= f.text_field :station_code %>
+  </div>
+  <div class="field">
+    <%= f.label :distance_from_origin %><br>
+    <%= f.number_field :distance_from_origin %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival_time %><br>
+    <%= f.text_field :arrival_time %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_time %><br>
+    <%= f.text_field :departure_time %>
+  </div>
+  <div>
+  <div class="field">
+    <%= f.label :sun %>
+    <%= f.check_box :sun %><br>
+  </div>
+  <div class="field">
+    <%= f.label :mon %>
+    <%= f.check_box :mon %><br>
+  </div>
+  <div class="field">
+    <%= f.label :tue %>
+    <%= f.check_box :tue %><br>
+  </div>
+  <div class="field">
+    <%= f.label :wed %>
+    <%= f.check_box :wed %><br>
+  </div>
+  <div class="field">
+    <%= f.label :thu %>
+    <%= f.check_box :thu %><br>
+  </div>
+  <div class="field">
+    <%= f.label :fri %>
+    <%= f.check_box :fri %><br>
+  </div>
+  <div class="field">
+    <%= f.label :sat %>
+    <%= f.check_box :sat %><br>
+  </div>
+  </div>
+  <div class="field">
+    <%= f.label :journey_day %>
+    <span style="font-size:10px; color:#ccc;">Specify the days taken to reach this station from origin</span><br>
+    <%= f.number_field :journey_day %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

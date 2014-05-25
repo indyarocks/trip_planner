@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Train number:</strong>
+  <%= @train_schedule.train_number %>
+</p>
+
+<p>
+  <strong>Station code:</strong>
+  <%= @train_schedule.station_code %>
+</p>
+
+<p>
+  <strong>Distance from origin:</strong>
+  <%= @train_schedule.distance_from_origin %>
+</p>
+
+<p>
+  <strong>Arrival time:</strong>
+  <%= @train_schedule.arrival_time %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @train_schedule.departure_time %>
+</p>
+
+<p>
+  <strong>Sun:</strong>
+  <%= @train_schedule.sun %>
+</p>
+
+<p>
+  <strong>Mon:</strong>
+  <%= @train_schedule.mon %>
+</p>
+
+<p>
+  <strong>Tue:</strong>
+  <%= @train_schedule.tue %>
+</p>
+
+<p>
+  <strong>Wed:</strong>
+  <%= @train_schedule.wed %>
+</p>
+
+<p>
+  <strong>Thu:</strong>
+  <%= @train_schedule.thu %>
+</p>
+
+<p>
+  <strong>Fri:</strong>
+  <%= @train_schedule.fri %>
+</p>
+
+<p>
+  <strong>Sat:</strong>
+  <%= @train_schedule.sat %>
+</p>
+
+<p>
+  <strong>Journey day:</strong>
+  <%= @train_schedule.journey_day %>
+</p>
+
+<%= link_to 'Edit', edit_train_schedule_path(@train_schedule) %> |
+<%= link_to 'Back', train_schedules_path %>

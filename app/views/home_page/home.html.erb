@@ -1,0 +1,35 @@
+<div id="mainContainer">
+  <div class="tripType">
+    <%= form_tag :search_trip, {method: :get} do %>
+        One Way Trip <%= radio_button("home", "trip_type", "one_way", :onclick => 'tripTypeFunc("one_way")', class: 'tripTypeRadio') %>
+        Return Trip <%= radio_button("home", "trip_type", "return",  :onclick => 'tripTypeFunc("return")', class: 'tripTypeRadio') %>
+        Multi City Trip <%= radio_button("home", "trip_type", "multi_part",  :onclick => 'tripTypeFunc("multi_part")', class: 'tripTypeRadio') %>
+
+        <div id="tripTypePartial"></div>
+        <input type="hidden" name="trip_type" id='tripTypeSelectedId' value=""/>
+
+        <%= submit_tag "Search" , id: 'searchButton', class: "btn btn-warning" %>
+    <% end %>
+
+  </div>
+
+</div>
+
+
+
+<script>
+    function tripTypeFunc(trip_type) {
+        document.getElementById('tripTypeSelectedId').value = trip_type
+        $.ajax(
+                {
+                    url: "<%= trip_type_path %>",
+                    type: 'get',
+                    data: { trip_type: trip_type},
+                    success: function(response) {
+                        document.getElementById("tripTypePartial").innerHTML = response.html
+                    }
+                }
+        )
+    }
+
+</script>

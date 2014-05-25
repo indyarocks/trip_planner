@@ -1,0 +1,32 @@
+<div class="alert alert-info text-center" style="width: 90%; margin: auto;">
+  AVAILABLE MULTI PART TRAIN(S)
+</div>
+<div class="table table-bordered table-hover" style="width: 93%; margin: auto;">
+  <table class="table">
+    <thead>
+    <tr>
+      <% table_headers.each do |t_head| %>
+          <th><%= t_head.to_s.humanize %></th>
+      <% end %>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <% multi_part.each_with_index do |multi_train_detail, i| %>
+        <% multi_train_detail.each_with_index do |trip, n| %>
+            <tr>
+              <% if n == 0 %>
+                  <td rowspan="<%= multi_train_detail.size %>"><%= i+1 %></td>
+              <% end %>
+
+              <% trip.each_value do |value| %>
+                  <td><%= value %></td>
+              <% end %>
+            </tr>
+        <% end %>
+    <% end %>
+    </tr>
+    </tbody>
+  </table>
+</div>
